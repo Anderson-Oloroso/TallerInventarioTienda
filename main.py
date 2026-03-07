@@ -1,5 +1,32 @@
 import sys
-
+from inventario import *
+datos = [
+    {
+        "nombre": "Leche",
+        "precio": 18.50, 
+        "cantidad": 120
+    },
+    {
+        "nombre": "Huevos",
+        "precio": 38.00, 
+        "cantidad": 80
+    },
+    {
+        "nombre": "Arroz",
+        "precio": 65.00, 
+        "cantidad": 45
+    },
+    {
+        "nombre": "Coca Cola",
+        "precio": 32.00, 
+        "cantidad": 60
+    },
+    {
+        "nombre": "Pan",
+        "precio": 28.00, 
+        "cantidad": 90
+    }
+]
 def separador():
     print("========================================")
 
@@ -22,13 +49,10 @@ def main():
         menu()
         try: 
             op = int(input("Ingrese una opcion: "))
-        except ValueError as v:
-            print("Error: ", v)
-
-        try:
             if op == 1:
                 separador()
                 print("AGREGAR PRODUCTO")
+                addProd(datos)
             elif op == 2:
                 separador()
                 print("LISTAR PRODUCTOS")
@@ -43,11 +67,13 @@ def main():
                 print("CALCULAR EL VALOR DEL INVENTARIO")
             elif op == 6:
                 separador()
-                sys.exit("SALIENDO DEL PROGRAMA ...")
+                print("SALIENDO DEL PROGRAMA ...")
+                sys.exit(0)
             else:
                 separador()
                 print("Opción inválida")
-        except Exception as e:
-            print("Error: ", e)
+        except ValueError as v:
+            print("Error: ", v)
             
-main()
+if __name__ == "__main__": 
+    main() 
