@@ -1,25 +1,53 @@
+import sys
+
 def separador():
-    print("="*20)
+    print("========================================")
 
 def menu():
-    mensaje = """      SISTEMA DE INVENTARIO
-    1. Agregar Producto
+    mensaje = """    1. Agregar Producto
     2. Listar Productos
     3. Actualizar Cantidad
     4. Eliminar Producto
     5. Calcular valor total del inventario
     6. Salir
 """
+    print("      SISTEMA DE INVENTARIO")
+    separador()
     print(mensaje)
-    op = int(input("Ingrese una opcion: "))
+    
 
 def main():
-    separador
-    op = menu()
-    separador
     while True:
-        if op == 1:
-            separador()
-            print("AGREGAR PRODUCTO")
-        if op == 2:
-            print("LISTAR PRODUCTOS")
+        separador()
+        menu()
+        try: 
+            op = int(input("Ingrese una opcion: "))
+        except ValueError as v:
+            print("Error: ", v)
+
+        try:
+            if op == 1:
+                separador()
+                print("AGREGAR PRODUCTO")
+            elif op == 2:
+                separador()
+                print("LISTAR PRODUCTOS")
+            elif op == 3: 
+                separador()
+                print("ACTUALIZAR CANTIDAD")
+            elif op == 4:
+                separador()
+                print("ELIMINAR PRODUCTO")
+            elif op == 5:
+                separador()
+                print("CALCULAR EL VALOR DEL INVENTARIO")
+            elif op == 6:
+                separador()
+                sys.exit("SALIENDO DEL PROGRAMA ...")
+            else:
+                separador()
+                print("Opción inválida")
+        except Exception as e:
+            print("Error: ", e)
+            
+main()
