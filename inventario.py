@@ -44,3 +44,27 @@ def listProducts():
     for dato in datos:
         _+=1
         print(f"{_}. Nombre: {dato['nombre']}\nPrecio: {dato['precio']}\nCantidad: {dato['cantidad']}\n")
+
+def actCantidad():
+    try:
+        with open("inventario.json", "r") as file:
+            datos = json.load(file)
+    except Exception as e:
+        print("Error: ",e)
+
+    producto = input("Nombre del producto: ").lower().strip()
+
+    for dato in datos:
+        if producto in dato['nombre'].lower():
+            print(f"\nProducto encontrado.")
+            nuevo = int(input("Nueva Cantidad disponible: "))
+            dato['cantidad'] = nuevo
+            break
+
+    with open("inventario.json", "w") as f:
+            try:
+                json.dump(datos, f, indent=4)
+            except Exception as e:
+                print("Error: ", e)
+            else:
+                print("\nCantidad actualizada correctamente")

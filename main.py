@@ -36,6 +36,7 @@ def main():
                 separador()
                 print("ACTUALIZAR CANTIDAD")
                 separador()
+                actCantidad()
             elif op == 4:
                 separador()
                 print("ELIMINAR PRODUCTO")
