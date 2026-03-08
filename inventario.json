@@ -23,5 +23,10 @@
         "nombre": "Cafe",
         "precio": 15.9,
         "cantidad": 90
+    },
+    {
+        "nombre": "Leche",
+        "precio": 25.89,
+        "cantidad": 50
     }
 ]
