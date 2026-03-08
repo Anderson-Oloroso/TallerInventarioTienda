@@ -41,6 +41,7 @@ def main():
                 separador()
                 print("ELIMINAR PRODUCTO")
                 separador()
+                delProduct()
             elif op == 5:
                 separador()
                 print("CALCULAR EL VALOR DEL INVENTARIO")

@@ -1,10 +1,5 @@
 [
     {
-        "nombre": "Leche",
-        "precio": 18.5,
-        "cantidad": 120
-    },
-    {
         "nombre": "Huevos",
         "precio": 38.0,
         "cantidad": 80

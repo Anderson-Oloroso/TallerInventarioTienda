@@ -31,7 +31,7 @@ def addProd():
             except Exception as e:
                  print("Error: ", e)
             else:
-                print("\nLibro agregado correctamente")
+                print("\nProducto agregado correctamente")
 
 def listProducts():
     try:
@@ -52,7 +52,7 @@ def actCantidad():
     except Exception as e:
         print("Error: ",e)
 
-    producto = input("Nombre del producto: ").lower().strip()
+    producto = input("Nombre del producto a actualizar: ").lower().strip()
 
     for dato in datos:
         if producto in dato['nombre'].lower():
@@ -68,3 +68,34 @@ def actCantidad():
                 print("Error: ", e)
             else:
                 print("\nCantidad actualizada correctamente")
+
+def delProduct():
+    try:
+        with open("inventario.json", "r") as file:
+            datos = json.load(file)
+    except Exception as e:
+        print("Error: ",e)
+    encontrado = True
+    producto = input("Nombre del producto a eliminar: ").lower().strip()
+    for i, dato in enumerate(datos):
+            if producto not in dato['nombre'].lower():
+                encontrado = False
+                break
+    
+    if encontrado:   
+        print("\nEl producto que intenta eliminar no existe")
+    else:
+        _ = 0
+        while _ < len(datos):
+            if producto in datos[_]['nombre'].lower():
+                datos.pop(_)
+            else:
+                _+= 1
+
+        with open("inventario.json", "w") as f:
+            try:
+                json.dump(datos, f, indent=4)
+            except Exception as e:
+                print("Error: ", e)
+            else:
+                print("\nProducto eliminado correctamente")
