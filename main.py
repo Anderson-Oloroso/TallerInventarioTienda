@@ -46,6 +46,7 @@ def main():
                 separador()
                 print("CALCULAR EL VALOR DEL INVENTARIO")
                 separador()
+                valTotalInventario()
             elif op == 6:
                 separador()
                 print("SALIENDO DEL PROGRAMA ...")

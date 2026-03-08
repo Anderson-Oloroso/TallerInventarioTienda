@@ -99,3 +99,22 @@ def delProduct():
                 print("Error: ", e)
             else:
                 print("\nProducto eliminado correctamente")
+
+def valTotalInventario():
+    total = 0
+    try:
+        with open("inventario.json", "r") as file:
+            datos = json.load(file)
+    except Exception as e:
+        print("Error: ",e)
+
+    _ = 0
+    print("Valor total del inventario: Precio * Cantidad")
+    for dato in datos:
+        _ += 1
+        valProducto = dato['precio'] * dato['cantidad']
+        print(f"{_}. {dato['nombre']}: {dato['precio']} * {dato['cantidad']} = {valProducto}")
+        total += valProducto
+
+    
+    print("\nEl valor total del inventario es: Q", total)
