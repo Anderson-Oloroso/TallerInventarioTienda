@@ -1,7 +1,7 @@
 import json
 
 def addProd():
-    nombreProd = input("Nombre del Producto: ").strip()
+    nombreProd = input("Nombre del Producto: ").strip().lower()
     precio = float(input("Precio del producto: "))
     cantidad = int(input("Cantidad de producto: "))
     encontrado = False
@@ -17,11 +17,11 @@ def addProd():
         print("Error: ",e)
 
     for dato in datos:
-            if nombreProd.lower() in dato['nombre'].lower():
-                encontrado = True
-                break
+        if nombreProd in dato['nombre'].lower():
+            encontrado = True
+            break
     
-    if encontrado:
+    if encontrado == True:
         print("\nEl producto que intenta agregar ya existe")
     else:
         datos.append(nuevo)
@@ -53,21 +53,27 @@ def actCantidad():
         print("Error: ",e)
 
     producto = input("Nombre del producto a actualizar: ").lower().strip()
-
+    encontrado = True
     for dato in datos:
         if producto in dato['nombre'].lower():
+            encontrado = True
             print(f"\nProducto encontrado.")
             nuevo = int(input("Nueva Cantidad disponible: "))
             dato['cantidad'] = nuevo
             break
+        else:
+            encontrado = False
 
-    with open("inventario.json", "w") as f:
+    if encontrado == False:
+        print("\nEl producto que intenta actualizar no existe")
+    else:
+        with open("inventario.json", "w") as f:
             try:
                 json.dump(datos, f, indent=4)
+                print("\nCantidad actualizada correctamente")
             except Exception as e:
                 print("Error: ", e)
-            else:
-                print("\nCantidad actualizada correctamente")
+                
 
 def delProduct():
     try:
@@ -82,7 +88,7 @@ def delProduct():
                 encontrado = False
                 break
     
-    if encontrado:   
+    if encontrado == False:   
         print("\nEl producto que intenta eliminar no existe")
     else:
         _ = 0
