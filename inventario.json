@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Leche",
+        "precio": 18.5,
+        "cantidad": 120
+    },
+    {
+        "nombre": "Huevos",
+        "precio": 38.0,
+        "cantidad": 80
+    },
+    {
+        "nombre": "Arroz",
+        "precio": 65.0,
+        "cantidad": 45
+    },
+    {
+        "nombre": "Coca Cola",
+        "precio": 32.0,
+        "cantidad": 60
+    },
+    {
+        "nombre": "Pan",
+        "precio": 28.0,
+        "cantidad": 90
+    },
+    {
+        "nombre": "Cafe",
+        "precio": 15.9,
+        "cantidad": 6
+    }
+]

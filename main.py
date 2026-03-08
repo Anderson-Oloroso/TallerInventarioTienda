@@ -1,32 +1,5 @@
 import sys
 from inventario import *
-datos = [
-    {
-        "nombre": "Leche",
-        "precio": 18.50, 
-        "cantidad": 120
-    },
-    {
-        "nombre": "Huevos",
-        "precio": 38.00, 
-        "cantidad": 80
-    },
-    {
-        "nombre": "Arroz",
-        "precio": 65.00, 
-        "cantidad": 45
-    },
-    {
-        "nombre": "Coca Cola",
-        "precio": 32.00, 
-        "cantidad": 60
-    },
-    {
-        "nombre": "Pan",
-        "precio": 28.00, 
-        "cantidad": 90
-    }
-]
 def separador():
     print("========================================")
 
@@ -52,7 +25,7 @@ def main():
             if op == 1:
                 separador()
                 print("AGREGAR PRODUCTO")
-                addProd(datos)
+                addProd()
             elif op == 2:
                 separador()
                 print("LISTAR PRODUCTOS")
