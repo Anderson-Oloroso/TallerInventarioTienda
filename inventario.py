@@ -1,5 +1,5 @@
 import json
-from main import separador
+
 def addProd():
     nombreProd = input("Nombre del Producto: ").strip()
     precio = float(input("Precio del producto: "))
@@ -10,8 +10,11 @@ def addProd():
             "precio": precio, 
             "cantidad": cantidad
     }
-    with open("inventario.json", "r") as file:
-        datos = json.load(file)
+    try:
+        with open("inventario.json", "r") as file:
+            datos = json.load(file)
+    except Exception as e:
+        print("Error: ",e)
 
     for dato in datos:
             if nombreProd.lower() in dato['nombre'].lower():
@@ -19,8 +22,7 @@ def addProd():
                 break
     
     if encontrado:
-        separador()
-        print("El producto que intenta agregar ya existe\n")
+        print("\nEl producto que intenta agregar ya existe")
     else:
         datos.append(nuevo)
         with open("inventario.json", "w") as f:
@@ -30,3 +32,15 @@ def addProd():
                  print("Error: ", e)
             else:
                 print("\nLibro agregado correctamente")
+
+def listProducts():
+    try:
+        with open("inventario.json", "r") as file:
+            datos = json.load(file)
+    except Exception as e:
+        print("Error: ",e)
+
+    _ = 0
+    for dato in datos:
+        _+=1
+        print(f"{_}. Nombre: {dato['nombre']}\nPrecio: {dato['precio']}\nCantidad: {dato['cantidad']}\n")

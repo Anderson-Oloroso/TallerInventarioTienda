@@ -25,19 +25,25 @@ def main():
             if op == 1:
                 separador()
                 print("AGREGAR PRODUCTO")
+                separador()
                 addProd()
             elif op == 2:
                 separador()
                 print("LISTAR PRODUCTOS")
+                separador()
+                listProducts()
             elif op == 3: 
                 separador()
                 print("ACTUALIZAR CANTIDAD")
+                separador()
             elif op == 4:
                 separador()
                 print("ELIMINAR PRODUCTO")
+                separador()
             elif op == 5:
                 separador()
                 print("CALCULAR EL VALOR DEL INVENTARIO")
+                separador()
             elif op == 6:
                 separador()
                 print("SALIENDO DEL PROGRAMA ...")
