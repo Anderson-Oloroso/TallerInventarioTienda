@@ -1,5 +1,5 @@
 # Gestionador de Inventarios para Tiendas
-### _TallerInventarioTienda_ 🚀
+### Nombre del repositorio 🚀: _TallerInventarioTienda_ 
 
 #### ✅ Descripcion del proyecto:
 Aplicacion de consola desarrollado en Python para gestionar los inventarios de tiendas pequeñas, este programa es capaz de :
