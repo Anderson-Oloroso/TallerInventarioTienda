@@ -1,4 +1,5 @@
 import json
+from main import separador
 def addProd():
     nombreProd = input("Nombre del Producto: ").strip()
     precio = float(input("Precio del producto: "))
@@ -18,7 +19,7 @@ def addProd():
                 break
     
     if encontrado:
-        #separador()
+        separador()
         print("El producto que intenta agregar ya existe\n")
     else:
         datos.append(nuevo)

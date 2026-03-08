@@ -11,6 +11,7 @@ def menu():
     5. Calcular valor total del inventario
     6. Salir
 """
+    separador()
     print("      SISTEMA DE INVENTARIO")
     separador()
     print(mensaje)
@@ -18,7 +19,6 @@ def menu():
 
 def main():
     while True:
-        separador()
         menu()
         try: 
             op = int(input("Ingrese una opcion: "))
