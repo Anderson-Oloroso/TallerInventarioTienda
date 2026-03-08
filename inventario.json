@@ -28,5 +28,10 @@
         "nombre": "Leche",
         "precio": 25.89,
         "cantidad": 50
+    },
+    {
+        "nombre": "Pan Integral",
+        "precio": 45.8,
+        "cantidad": 100
     }
 ]
