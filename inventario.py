@@ -113,8 +113,8 @@ def valTotalInventario():
     for dato in datos:
         _ += 1
         valProducto = dato['precio'] * dato['cantidad']
-        print(f"{_}. {dato['nombre']}: {dato['precio']} * {dato['cantidad']} = {valProducto}")
+        print(f"{_}. {dato['nombre']}: {dato['precio']} * {dato['cantidad']} = Q{valProducto:,.2f}")
         total += valProducto
 
     
-    print("\nEl valor total del inventario es: Q", total)
+    print(f"\nEl valor total del inventario es: Q{total:,.2f}")

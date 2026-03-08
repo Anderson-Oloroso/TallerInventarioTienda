@@ -2,7 +2,7 @@
     {
         "nombre": "Huevos",
         "precio": 38.0,
-        "cantidad": 80
+        "cantidad": 500
     },
     {
         "nombre": "Arroz",
@@ -33,5 +33,15 @@
         "nombre": "Pan Integral",
         "precio": 45.8,
         "cantidad": 100
+    },
+    {
+        "nombre": "Jugo de uva 200 ml",
+        "precio": 2.5,
+        "cantidad": 500
+    },
+    {
+        "nombre": "Tortrix",
+        "precio": 2.0,
+        "cantidad": 800
     }
 ]
