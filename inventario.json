@@ -43,5 +43,10 @@
         "nombre": "Tortrix",
         "precio": 2.0,
         "cantidad": 800
+    },
+    {
+        "nombre": "sal yodada",
+        "precio": 4.0,
+        "cantidad": 50
     }
 ]

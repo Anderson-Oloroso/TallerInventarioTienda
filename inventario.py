@@ -1,7 +1,7 @@
 import json
 
 def addProd():
-    nombreProd = input("Nombre del Producto: ").strip().lower()
+    nombreProd = input("Nombre del Producto: ").strip()
     precio = float(input("Precio del producto: "))
     cantidad = int(input("Cantidad de producto: "))
     encontrado = False
@@ -17,7 +17,7 @@ def addProd():
         print("Error: ",e)
 
     for dato in datos:
-        if nombreProd in dato['nombre'].lower():
+        if nombreProd.lower() in dato['nombre'].lower():
             encontrado = True
             break
     
